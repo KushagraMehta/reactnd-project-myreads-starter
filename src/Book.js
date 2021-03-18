@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 class Book extends Component {
-  static PropTypes = {
+  static propTypes = {
     books: PropTypes.array.isRequired,
   };
 
@@ -16,7 +16,9 @@ class Book extends Component {
               <div
                 className="book-cover"
                 style={{
-                  backgroundImage: `url("${book.imageLinks.thumbnail}")`,
+                  width: "128px",
+                  height: "193px",
+                  backgroundImage: `url("${book.imageLinks.thumbnail}.jpeg")`,
                 }}
               />
             ) : null}

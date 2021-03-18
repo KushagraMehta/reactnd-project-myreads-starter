@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Book from "./Book";
-import keyIndex from "react-key-index";
 
 class Bookshelf extends Component {
-  static PropTypes = {
+  static propTypes = {
     books: PropTypes.array.isRequired,
   };
 
@@ -32,9 +31,9 @@ class Bookshelf extends Component {
         <h2 className="bookshelf-title">{this.state.title[this.props.type]}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            {filteredBooks.map((book) => (
+            {filteredBooks.map((book, index) => (
               <Book
-                key={keyIndex([book], 1)[0].id}
+                key={index}
                 book={book}
                 updateShelf={this.props.updateShelf}
               />

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Bookshelf from "./Bookshelf";
 
 class ListBooks extends Component {
@@ -32,11 +32,13 @@ class ListBooks extends Component {
           </div>
         </div>
         <div className="open-search">
-          <Link to="/search">Add a book</Link>
+          <button onClick={() => this.props.history.push("/search")}>
+            Add a book
+          </button>
         </div>
       </div>
     );
   }
 }
 
-export default ListBooks;
+export default withRouter(ListBooks);
